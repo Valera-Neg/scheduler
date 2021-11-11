@@ -5,7 +5,7 @@ export default function Empty(props) {
 
   return (
     <main className="appointment__add">
-     
+
       <img
         classNamej="appointment__add-button"
         src="images/add.png"
