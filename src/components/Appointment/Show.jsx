@@ -1,13 +1,11 @@
 import React, { Fragment } from 'react';
-import Header from './Header';
-
 
 
 export default function Show(props) {
 
   return (
     <Fragment>
-      
+
       <main className="appointment__card appointment__card--show">
         <section className="appointment__card-left">
           <h2 className="text--regular">{props.student}</h2>
