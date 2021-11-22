@@ -5,7 +5,7 @@ import Show from './Show';
 import Empty from './Empty';
 import useVisualMode from 'hooks/useVisualMode';
 import Form from './Form';
-
+import Application from 'components/Application';
 
 
 
@@ -18,9 +18,11 @@ export default function Appointment(props) {
     props.interview ? SHOW : EMPTY
   );
 
+
   return (
     <Fragment>
       <Header time={props.time} />
+
 
       <article
         className="appointment">
@@ -31,7 +33,7 @@ export default function Appointment(props) {
             student={props.interview.student}
           />
         )}
-        {mode === CREATE && <Form  onCancel={() => back(EMPTY)}/>}
+        {mode === CREATE && <Form interviewers={props.interviewers} onCancel={() => back(EMPTY)} />}
         {props.message}
       </article>
     </Fragment>

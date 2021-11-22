@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import InterviewerList from 'components/InterviewerList';
 import Button from 'components/Button';
-
+import index from "./index"
+import Appointment from '.';
 
 
 export default function Form(props) {
@@ -25,7 +26,7 @@ export default function Form(props) {
         </form>
         <InterviewerList
 
-          interviewers={[]}
+          interviewers={props.interviewers}
           value={interviewer}
           onChange={setInterviewer}
 
@@ -33,6 +34,7 @@ export default function Form(props) {
       </section>
       <section className="appointment__card-right">
         <section className="appointment__actions">
+
           <Button danger onClick={() => props.onCancel(setStudent(""), setInterviewer(null))}>Cancel</Button>
           <Button confirm onClick={() => props.onSave(student, interviewer)}>Save</Button>
         </section>

@@ -14,13 +14,13 @@ export const getAppointmentsForDay = function (state, day) {
 }
 
 
- export const getInterview = function(state, interview) {
+export const getInterview = function (state, interview) {
 
   if (!interview) {
     return null;
   } else {
 
-    return {student: interview.student, interviewer: state.interviewers[interview.interviewer]}
+    return { student: interview.student, interviewer: state.interviewers[interview.interviewer] }
 
   }
 
@@ -41,6 +41,14 @@ export const getInterviewersForDay = function (state, day) {
   }
   return res;
 }
+
+// export const getInterviewer = function(state, interviewer) {
+//   if(!interviewer) {
+//     return null;
+//   }else{
+//     return {interviewer: state.interviewers}
+//   }
+// }
 
 
 
