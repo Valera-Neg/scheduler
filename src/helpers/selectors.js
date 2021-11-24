@@ -1,3 +1,5 @@
+
+
 export const getAppointmentsForDay = function (state, day) {
   let res = [];
   for (let currentDay of state.days) {
@@ -7,7 +9,7 @@ export const getAppointmentsForDay = function (state, day) {
           res.push(state.appointments[appIndex]);
         }
       }
-      return res;
+      //return res;
     }
   }
   return res;
