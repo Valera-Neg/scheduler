@@ -5,7 +5,6 @@ export default function Show(props) {
 
   return (
     <Fragment>
-
       <main className="appointment__card appointment__card--show">
         <section className="appointment__card-left">
           <h2 className="text--regular">{props.student}</h2>
@@ -20,7 +19,7 @@ export default function Show(props) {
               className="appointment__actions-button"
               src="images/edit.png"
               alt="Edit"
-              onClick={props.onEdit}
+              onClick={() => props.onEdit(props.student, props.interviewer)}
             />
             <img
               className="appointment__actions-button"

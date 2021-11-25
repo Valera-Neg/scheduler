@@ -27,8 +27,6 @@ export default function Application(props) {
   console.log(state)
 
   useEffect(() => {
-
-
     Promise.all([
       axios.get("api/days"),
       axios.get("api/appointments"),
@@ -49,8 +47,6 @@ export default function Application(props) {
 
   const interviewers = getInterviewersForDay(state, state.day);
 
-
-
   function bookInterview(id, interview) {
     console.log(id, interview);
     const appointment = {
@@ -61,15 +57,13 @@ export default function Application(props) {
       ...state.appointments,
       [id]: appointment
     };
-
     return axios.put(`/api/appointments/${id}`, { interview }).then(() => { setState({ ...state, appointments }) })
-
   }
 
 
 
   function cancelInterview(id, interview) {
-    console.log(id, interview);
+
     const appointment = {
       ...state.appointments[id],
       interview: null
@@ -83,12 +77,9 @@ export default function Application(props) {
 
   }
 
-
   const schedule = appointments.map((appointment) => {
 
     const interview = getInterview(state, appointment.interview);
-
-
 
     return (
       <Appointment
@@ -103,10 +94,9 @@ export default function Application(props) {
     );
   });
 
+
   return (
-
     <Fragment>
-
       <main className="layout">
         <section className="sidebar">
           <img
