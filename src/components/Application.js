@@ -7,6 +7,7 @@ import { getInterview } from "helpers/selectors";
 import useApplicationData from "hooks/useApplicationData";
 
 
+
 export default function Application(props) {
 
   const { state, setDay, bookInterview, cancelInterview } = useApplicationData();
@@ -20,10 +21,10 @@ export default function Application(props) {
     const interview = getInterview(state, appointment.interview);
 
     return (
+
       <Appointment
         key={appointment.id}
-        id={appointment.id}
-        time={appointment.time}
+        {...appointment}
         interview={interview}
         interviewers={Object.values(interviewers)}
         bookInterview={bookInterview}
@@ -31,7 +32,6 @@ export default function Application(props) {
       />
     );
   });
-
 
   return (
     <Fragment>
@@ -56,8 +56,9 @@ export default function Application(props) {
             alt="Lighthouse Labs"
           />
         </section>
-        <section className="schedule">
+        <section className="schedule" >
           {schedule}
+          <Appointment key="last" time="5pm" />
         </section>
       </main>
     </Fragment>
