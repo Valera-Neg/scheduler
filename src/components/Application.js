@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import "components/Application.scss";
 import DayList from "./DayList";
-import Appointment from "components/Appointment/index";
+import Appointment from "components/Appointment/Index";
 import { getAppointmentsForDay, getInterviewersForDay } from "helpers/selectors";
 import { getInterview } from "helpers/selectors";
 import useApplicationData from "hooks/useApplicationData";

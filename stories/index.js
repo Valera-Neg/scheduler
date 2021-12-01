@@ -16,7 +16,7 @@ import InterviewerListItem from "components/InterviewerListItem";
 
 import InterviewerList from "components/InterviewerList";
 
-import Appointment from "components/Appointment";
+import Appointment from "components/Appointment/Index";
 
 import Heder from "components/Appointment/Header";
 
