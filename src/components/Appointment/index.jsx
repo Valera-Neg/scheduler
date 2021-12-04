@@ -30,11 +30,11 @@ export default function Appointment(props) {
   );
 
   function save(name, interviewer) {
+    transition(SAVING)
     const interview = {
       student: name,
       interviewer
     };
-    transition(SAVING)
     props.bookInterview(props.id, interview)
       .then(() => { transition(SHOW) })
       .catch(error => transition(ERROR_SAVE, true))
@@ -42,11 +42,11 @@ export default function Appointment(props) {
   }
 
   function cancel(name, interviewer) {
+    transition(DELETING, true)
     const interview = {
       student: name,
       interviewer
     };
-    transition(DELETING, true)
     props.cancelInterview(props.id, interview)
       .then(() => { transition(EMPTY) })
       .catch(error => transition(ERROR_DELETE, true))
@@ -56,6 +56,7 @@ export default function Appointment(props) {
     <Fragment>
       <Header time={props.time} />
       <article
+        data-testid="appointment"
         className="appointment">
         {mode === EDIT &&
           <Form
@@ -63,7 +64,7 @@ export default function Appointment(props) {
             interviewer={props.interview.interviewer.id}
             interviewers={props.interviewers}
             onSave={save}
-            onCancel={() => transition(SHOW)}
+            onCancel={() => back()}
           />}
         {mode === DELETING && <Status message={"Deleting..."} />}
         {mode === CONFIRM && <Confirm onConfirm={cancel} onCancel={() => back()} message={"Are you sure you want to delete?"} />}
@@ -76,7 +77,7 @@ export default function Appointment(props) {
             onEdit={() => transition(EDIT)}
           />
         )}
-        {mode === SAVING && <Status message={"saving..."} />}
+        {mode === SAVING && <Status message={"Saving..."} />}
         {mode === CREATE && <Form onSave={save} interviewers={props.interviewers} onCancel={() => back()} />}
         {mode === ERROR_SAVE && <Error message={"Could not save the changes"} onClose={() => back()} />}
         {mode === ERROR_DELETE && <Error message={"Could not cancel appointment."} onClose={() => back()} />}

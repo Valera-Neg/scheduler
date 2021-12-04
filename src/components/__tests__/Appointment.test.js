@@ -13,26 +13,7 @@ it("renders without crashing", () => {
   render(<Appointment />);
 });
 
-// it("does ...", () => {
 
-// });
-
-// it("does ...", () => {
-
-// });
-
-// test("does...", () => {
-
-// })
-
-// xit("does something it is supposed to do", () => {
-  
-// });
-
-
-// test.skip("does something it is supposed to do", () => {
-  
-// });
 
 
 });
