@@ -18,7 +18,9 @@
     "eject": "react-scripts eject",
     "storybook": "CHOKIDAR_USEPOLLING=true start-storybook -p 9009 -s public --ci",
     "build-storybook": "CHOKIDAR_USEPOLLING=true build-storybook -s public",
+
     "cypress": "cypress open -P ."
+
   },
   "browserslist": {
     "production": [
