@@ -12,7 +12,6 @@ export const getInterview = function (state, interview) {
   };
 };
 
-
 export const getInterviewersForDay = function (state, day) {
   const currentDay = Object.values(state.days).filter(d => d.name === day);
   const interviewersForDay = currentDay.map(o => o.interviewers).flat();

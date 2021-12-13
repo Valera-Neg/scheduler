@@ -3,12 +3,10 @@ import InterviewerList from 'components/InterviewerList';
 import Button from 'components/Button';
 
 
-
 export default function Form(props) {
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
   const [error, setError] = useState("");
-
 
   function reset() {
     setStudent("")
@@ -16,12 +14,10 @@ export default function Form(props) {
     setInterviewer(null)
   };
 
-
   function cancel() {
     reset()
     props.onCancel()
   };
-
 
   function validate() {
     if (student === "") {
@@ -64,4 +60,4 @@ export default function Form(props) {
       </section>
     </main>
   );
-}
+};
