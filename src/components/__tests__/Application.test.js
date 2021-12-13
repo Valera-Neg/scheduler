@@ -104,11 +104,11 @@ describe("Application", () => {
 
     // 1. Render the Application.
     const { container } = render(<Application />);
-
-    // 2. Wait until the text "Archie Cohen" is displayed.
+   
+     // 2. Wait until the text "Archie Cohen" is displayed.
     await waitForElement(() => getByText(container, "Archie Cohen"));
-
-    // 3. Click the "Edite" button on the modefiy appointment.
+ 
+      // 3. Click the "Edite" button on the modefiy appointment.
     const appointment = getAllByTestId(container, "appointment").find(appointment => queryByText(appointment, "Archie Cohen"));
     fireEvent.click(getByAltText(appointment, "Edit"));
 
@@ -116,8 +116,6 @@ describe("Application", () => {
     fireEvent.change(getByPlaceholderText(appointment, /Enter Student Name/i), {
       target: { value: "Lydia Miller-Jones" }
     });
-
-
     fireEvent.click(getByAltText(appointment, "Sylvia Palmer"));
 
     // 5. Click the "Save" button 
@@ -130,8 +128,10 @@ describe("Application", () => {
     const day = getAllByTestId(container, "day").find(day => queryByText(day, "Monday"))
     expect(getByText(day, "no spots remaining")).toBeInTheDocument();
 
-    console.log(prettyDOM(container))
-  });
+  //console.log(prettyDOM(container))
+  //console.log(prettyDOM(appointment))
+  //console.log(prettyDOM(day))
+   });
 
 
   it("shows the save error when failing to save an appointment", async () => {

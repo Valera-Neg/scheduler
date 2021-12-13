@@ -26,7 +26,7 @@ export default function Application(props) {
         key={appointment.id}
         {...appointment}
         interview={interview}
-        interviewers={Object.values(interviewers)}
+        interviewers={interviewers}
         bookInterview={bookInterview}
         cancelInterview={cancelInterview}
       />
